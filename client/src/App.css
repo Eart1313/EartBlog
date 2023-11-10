@@ -1,0 +1,44 @@
+#root {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@keyframes dotsAnimation {
+  0%,
+  20% {
+    content: ".";
+  }
+  40%,
+  60% {
+    content: "..";
+  }
+  80%,
+  100% {
+    content: "...";
+  }
+}
+
+.dots::after {
+  content: "....";
+  animation: dotsAnimation 1s infinite;
+}
+
+.checkmark {
+  width: 55px;
+  height: 25px;
+  transform: rotate(-45deg) scaleX(-1); /* เพิ่ม scaleX(-1) เพื่อกลับด้านแนวนอน */
+  border: solid white;
+  border-width: 0 5px 5px 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -27.5px;
+  margin-top: -12.5px;
+}
