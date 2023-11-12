@@ -44,7 +44,7 @@ const Single = () => {
 
     window.scrollTo(0, 0);
   };
-
+  console.log(post);
   useEffect(() => {
     fetchData();
   }, [params.id]);
@@ -78,7 +78,6 @@ const Single = () => {
           <div className="flex-[5]">
             <img
               src={post?.img}
-              alt=""
               className="w-[100%] h-[350px] object-cover mt-[10px]"
             />
             <div className="flex items-center gap-[10px] text-[14px] mt-[25px]">
