@@ -81,8 +81,7 @@ const Write = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const currentDate = moment();
-    const formattedDateTime = currentDate.format("YYYY-MM-DD HH:mm:ss");
+    const currentDate = moment().format("YYYY-MM-DD HH:mm:ss");
     if (!stripHtmlTags(value) || !title) {
       setErrMes("*Please fill all fields!");
       return;
@@ -202,7 +201,7 @@ const Write = () => {
           title,
           desc: value,
           imgUrl: uploadedImgUrl,
-          date: formattedDateTime,
+          date: currentDate,
           category,
         };
         await axios.post(`${proxy}/post`, body, {
@@ -297,7 +296,7 @@ const Write = () => {
               className="p-[10px] border-[1px] border-[lightgray]  focus:outline-none focus:border-[teal] focus:ring-1 focus:ring-[teal]"
               onChange={(e) => setTitle(e.target.value)}
               onClick={!currentUser ? notAuthen : undefined}
-            />  
+            />
             <div
               className="min-h-[69vh]"
               onClick={!currentUser ? notAuthen : undefined}>

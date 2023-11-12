@@ -44,7 +44,6 @@ const Single = () => {
 
     window.scrollTo(0, 0);
   };
-  console.log(post);
   useEffect(() => {
     fetchData();
   }, [params.id]);
@@ -88,7 +87,7 @@ const Single = () => {
               />
               <div>
                 <span className="font-bold">{post?.username}</span>
-                <p>{moment(post?.date).fromNow()}</p>
+                <p>{moment(post?.date.split(".")[0]).fromNow()}</p>
               </div>
               {currentUser?.username === post?.username && (
                 <div className="flex gap-[5px]">

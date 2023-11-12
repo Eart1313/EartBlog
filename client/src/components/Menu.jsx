@@ -27,21 +27,21 @@ const Menu = ({ category, orderOfPost }) => {
       </h1>
       {posts
         ?.slice(0, 5)
-        .filter((item) => item.id !== orderOfPost)
+        .filter((item) => item?.id !== orderOfPost)
         .map((item) => (
-          <div className="flex flex-col gap-[10px]" key={item.id}>
+          <div className="flex flex-col gap-[10px]" key={item?.id}>
             <img
-              src={item.img}
-              alt={item.title}
+              src={item?.img}
+              alt={item?.title}
               className="w-[100%] h-[200px] object-cover"
             />
-            <Link to={`/post/${item.id}`}>
+            <Link to={`/post/${item?.id}`}>
               <h2 className="text-[#555] font-semibold text-[20px]">
-                {item.title.slice(0, 120)}
+                {item?.title.slice(0, 120)}
               </h2>
             </Link>
             <button
-              onClick={() => navigate(`/post/${item.id}`)}
+              onClick={() => navigate(`/post/${item?.id}`)}
               className="w-max py-[5.5px] px-[13px] cursor-pointer border border-[1px] hover:border-[#fff] hover:bg-[#b9e7e7] hover:text-[#000000] border-[#008080] text-[#008080]">
               Read More
             </button>
