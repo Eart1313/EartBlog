@@ -51,21 +51,21 @@ const Home = () => {
                 No posts yet
               </div>
             )}
-            {posts.map((item, index) => (
+            {posts?.map((item, index) => (
               <div
                 className={`flex gap-[100px] ${
                   index % 2 === 0 ? "flex-row-reverse" : ""
                 }`}
-                key={item.id}>
+                key={item?.id}>
                 <div className="relative flex-[2] after:h-[350px] after:z-[-1] after:w-[100%] after:absolute after:top-[20px] after:left-[-20px] after:-inset-1 after:bg-[#b9e7e7] ">
                   <img
                     className="w-[100%] h-[350px] object-cover"
-                    src={item.img}
-                    alt={item.title}
+                    src={item?.img}
+                    alt={item?.title}
                   />
                 </div>
                 <div className="flex-[3] flex flex-col justify-between">
-                  <Link to={`/post/${item.id}`}>
+                  <Link to={`/post/${item?.id}`}>
                     <h1 className="text-[46px] font-semibold max-w-xl overflow-hidden m-[5px]">
                       {item.title.slice(0, 60)}
                     </h1>
@@ -74,7 +74,7 @@ const Home = () => {
                     {stripHtmlTags(`${item?.desc}`).slice(0, 300)}...
                   </p>
                   <button
-                    onClick={() => navigate(`/post/${item.id}`)}
+                    onClick={() => navigate(`/post/${item?.id}`)}
                     className="w-max py-[10px] px-[20px] cursor-pointer border border-[1px] hover:border-[#fff] hover:bg-[#b9e7e7] hover:text-[#000000] border-[#008080] text-[#008080]">
                     Read More
                   </button>
